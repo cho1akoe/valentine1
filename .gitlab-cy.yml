@@ -1,13 +1,10 @@
-stages:
-  - deploy
+image: alpine
 
 pages:
-  stage: deploy
   script:
     - mkdir -p public
-    - cp -r * public/
+    - cp valentine.html public/index.html
+    - mv public/index.html public/index.html
   artifacts:
     paths:
       - public
-  only:
-    - main
